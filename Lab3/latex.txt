@@ -1,0 +1,43 @@
+\textrm{Forward Message:}
+\\
+\alpha(z_{0}) = P(z_{0})P(\space (\hat{x_0}, \hat{y_0}) \space | \space z_0)
+\\
+\alpha(z_n)  = P(\space (\hat{x_n}, \hat{y_n}) \space | \space z_n)\sum\limits_{z_{n-1}}\alpha(z_{n-1})P(z_n \space | \space z_{n-1})
+
+\\[0in]
+
+\alpha(z_n) = \frac{\alpha(z_n)}{\sum\limits_{z_{i}\in{z_n}}\alpha(z_i)} \space \forall {z_n}
+
+\\[0.5in]
+\textrm{Backward Message:}
+\\
+\beta(z_{N-1}) = 1
+\\
+\beta(z_{n-1})  = \displaystyle\sum\limits_{z_{n}}\beta(z_{n})P(\space (\hat{x_n}, \hat{y_n}) \space | \space z_n)P(z_n \space | \space z_{n-1} ) 
+
+\\
+
+\beta(z_{n-1}) = \frac{\beta(z_{n-1})}{\sum\limits_{z_{i}\in{z_{n-1}}}\beta(z_i)} \space \forall {z_{n-1}}
+\\
+
+\\
+P(z_n \space | \space (\hat{x}_0, \hat{y}_0) ,...., (\hat{x}_{N-1}, \hat{y}_{N-1})) = \frac{\alpha(z_n) \beta(z_n)}{\sum\limits_{z_i}}
+
+w_0(z_0) = ln(\space P(z_0)P(\space (\hat{x}_0, \hat{y}_0) | \space z_0) \space )
+\\[0.5in]
+
+w_i(z_i) = lnP((\hat{x}_i, \hat{y}_i) | \space z_i)) \space + \space \max_{z_{i-1}}  \{lnP(z_i|z_{i-1}) \space + w_{i-1}(z_{i-1}) \}
+\\
+\phi_i(z_i) = argmax_{z_i} \{lnP(z_i|z_{i-1}) \space + w_{i-1}(z_{i-1}) \}
+
+\\[0.5in]
+
+z_{N-1}^{*} = argmax (w_{N-1}(z_{N-1}))
+\\
+z_i^* = \phi_{i+1}(z_{i+1}^*) \space \space \forall i = N-2,...,0 
+
+
+
+
+
+
