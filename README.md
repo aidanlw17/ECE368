@@ -10,4 +10,8 @@
       
 #### Lab2: Bayesian Linear Regression
   1. Use Bayesian regression to fit a linear model
-    
+  
+#### Lab3: Hidden Markov Model
+  1. Hidden Markov model to track a rover's movement over time
+      * Forward-Backward algorithm
+      * Viterbi algorithm
